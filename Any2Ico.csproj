@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Costura.Fody.5.0.0-alpha0281\build\Costura.Fody.props" Condition="Exists('packages\Costura.Fody.5.0.0-alpha0281\build\Costura.Fody.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2731BCCE-9D0D-4DD3-AC7C-18BD006C8D59}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Any2Ico</RootNamespace>
+    <AssemblyName>Any2Ico</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Any2Ico\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CB63E0FFF504ACA1A47F5A65340B35480077A6F5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Any2Ico_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>picture.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Costura.Fody.5.0.0-alpha0281\lib\netstandard1.0\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET-Q8-AnyCPU, Version=7.22.2.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>packages\Magick.NET-Q8-AnyCPU.7.22.2.2\lib\net40\Magick.NET-Q8-AnyCPU.dll</HintPath>
+    </Reference>
+    <Reference Include="Magick.NET.Core, Version=5.2.2.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>packages\Magick.NET.Core.5.2.2\lib\net40\Magick.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.WindowsAPICodePack-Core.1.1.0.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Any2IcoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Any2IcoForm.Designer.cs">
+      <DependentUpon>Any2IcoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConvertView.Designer.cs">
+      <DependentUpon>ConvertView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreviewForm.Designer.cs">
+      <DependentUpon>PreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Any2IcoForm.resx">
+      <DependentUpon>Any2IcoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConvertView.resx">
+      <DependentUpon>ConvertView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewForm.resx">
+      <DependentUpon>PreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="picture.ico" />
+    <None Include="Resources\32x32_align-to-left.png" />
+    <None Include="Resources\32x32_align-justify.png" />
+    <None Include="Resources\32x32_adjust-contrast.png" />
+    <None Include="Resources\32x32_add-square-button.png" />
+    <None Include="Resources\32x32_zoom-out.png" />
+    <None Include="Resources\32x32_zoom-in.png" />
+    <None Include="Resources\32x32_youtube-logo-2.png" />
+    <None Include="Resources\32x32_youtube-logo-1.png" />
+    <None Include="Resources\32x32_youtube-logo.png" />
+    <None Include="Resources\32x32_yen-symbol.png" />
+    <None Include="Resources\32x32_xing-logotype.png" />
+    <None Include="Resources\32x32_xing-logo.png" />
+    <None Include="Resources\32x32_x2-symbol-of-a-letter-and-a-number-subscript.png" />
+    <None Include="Resources\32x32_windows-logo-silhouette.png" />
+    <None Include="Resources\32x32_white-flag-symbol.png" />
+    <None Include="Resources\32x32_wheelchair.png" />
+    <None Include="Resources\32x32_weibo-website-logo.png" />
+    <None Include="Resources\32x32_warning-sign-on-a-triangular-background.png" />
+    <None Include="Resources\32x32_volume-up-interface-symbol.png" />
+    <None Include="Resources\32x32_volume-off.png" />
+    <None Include="Resources\32x32_vk-social-network-logo.png" />
+    <None Include="Resources\32x32_vintage-key-outline.png" />
+    <None Include="Resources\32x32_vimeo-square-logo.png" />
+    <None Include="Resources\32x32_video-play-square-button.png" />
+    <None Include="Resources\32x32_vertical-resizing-option.png" />
+    <None Include="Resources\32x32_vertical-ellipsis.png" />
+    <None Include="Resources\32x32_u-shaped-thick-magnet.png" />
+    <None Include="Resources\32x32_user-shape.png" />
+    <None Include="Resources\32x32_user-md-symbol.png" />
+    <None Include="Resources\32x32_upload-button.png" />
+    <None Include="Resources\32x32_upload.png" />
+    <None Include="Resources\32x32_up-chevron-button.png" />
+    <None Include="Resources\32x32_up-arrow.png" />
+    <None Include="Resources\32x32_unlink-symbol.png" />
+    <None Include="Resources\32x32_undo-arrow.png" />
+    <None Include="Resources\32x32_underline-text-option.png" />
+    <None Include="Resources\32x32_umbrella-black-silhouette.png" />
+    <None Include="Resources\32x32_two-columns-layout.png" />
+    <None Include="Resources\32x32_twitter-sign.png" />
+    <None Include="Resources\32x32_twitter-black-shape.png" />
+    <None Include="Resources\32x32_turkish-lire-symbol.png" />
+    <None Include="Resources\32x32_tumblr-logo-1.png" />
+    <None Include="Resources\32x32_tumblr-logo.png" />
+    <None Include="Resources\32x32_trophy.png" />
+    <None Include="Resources\32x32_trello-website-logo.png" />
+    <None Include="Resources\32x32_trash.png" />
+    <None Include="Resources\32x32_tint-drop.png" />
+    <None Include="Resources\32x32_time.png" />
+    <None Include="Resources\32x32_ticket.png" />
+    <None Include="Resources\32x32_thumbs-up-hand-symbol.png" />
+    <None Include="Resources\32x32_thumbs-up.png" />
+    <None Include="Resources\32x32_thumbs-down-silhouette.png" />
+    <None Include="Resources\32x32_thumb-down.png" />
+    <None Include="Resources\32x32_three-small-square-shapes.png" />
+    <None Include="Resources\32x32_thin-arrowheads-pointing-down.png" />
+    <None Include="Resources\32x32_text-width.png" />
+    <None Include="Resources\32x32_text-height-adjustment.png" />
+    <None Include="Resources\32x32_text-file-1.png" />
+    <None Include="Resources\32x32_text-file.png" />
+    <None Include="Resources\32x32_terminal.png" />
+    <None Include="Resources\32x32_telephone-symbol-button.png" />
+    <None Include="Resources\32x32_telephone-handle-silhouette.png" />
+    <None Include="Resources\32x32_tasks-list.png" />
+    <None Include="Resources\32x32_tags.png" />
+    <None Include="Resources\32x32_tag-black-shape.png" />
+    <None Include="Resources\32x32_table-grid.png" />
+    <None Include="Resources\32x32_superscript-text-formatting.png" />
+    <None Include="Resources\32x32_sun.png" />
+    <None Include="Resources\32x32_suitcase-with-white-details.png" />
+    <None Include="Resources\32x32_strikethrough.png" />
+    <None Include="Resources\32x32_stethoscope.png" />
+    <None Include="Resources\32x32_step-forward.png" />
+    <None Include="Resources\32x32_step-backward.png" />
+    <None Include="Resources\32x32_star-half-empty.png" />
+    <None Include="Resources\32x32_star-1.png" />
+    <None Include="Resources\32x32_star.png" />
+    <None Include="Resources\32x32_stack-exchange-symbol.png" />
+    <None Include="Resources\32x32_stack-exchange-logo.png" />
+    <None Include="Resources\32x32_square-shape-shadow.png" />
+    <None Include="Resources\32x32_spinner-of-dots.png" />
+    <None Include="Resources\32x32_speech-bubbles-comment-option.png" />
+    <None Include="Resources\32x32_sort-up.png" />
+    <None Include="Resources\32x32_sort-reverse-alphabetical-order.png" />
+    <None Include="Resources\32x32_sort-down.png" />
+    <None Include="Resources\32x32_sort-by-order.png" />
+    <None Include="Resources\32x32_sort-by-numeric-order.png" />
+    <None Include="Resources\32x32_sort-by-attributes-interface-button-option.png" />
+    <None Include="Resources\32x32_sort-by-attributes.png" />
+    <None Include="Resources\32x32_sort-by-alphabet.png" />
+    <None Include="Resources\32x32_sort-arrows-couple-pointing-up-and-down.png" />
+    <None Include="Resources\32x32_smile.png" />
+    <None Include="Resources\32x32_small-rocket-ship-silhouette.png" />
+    <None Include="Resources\32x32_skype-logo.png" />
+    <None Include="Resources\32x32_sitemap.png" />
+    <None Include="Resources\32x32_sign-out-option.png" />
+    <None Include="Resources\32x32_sign-in.png" />
+    <None Include="Resources\32x32_signal-bars.png" />
+    <None Include="Resources\32x32_shopping-cart-black-shape.png" />
+    <None Include="Resources\32x32_shield.png" />
+    <None Include="Resources\32x32_share-symbol.png" />
+    <None Include="Resources\32x32_share-post-symbol.png" />
+    <None Include="Resources\32x32_share-option.png" />
+    <None Include="Resources\32x32_settings.png" />
+    <None Include="Resources\32x32_screenshot.png" />
+    <None Include="Resources\32x32_save-file-option.png" />
+    <None Include="Resources\32x32_rupee-indian.png" />
+    <None Include="Resources\32x32_rss-symbol.png" />
+    <None Include="Resources\32x32_rss-feed-button.png" />
+    <None Include="Resources\32x32_rounded-black-square-shape.png" />
+    <None Include="Resources\32x32_road-perspective.png" />
+    <None Include="Resources\32x32_right-quotation-mark.png" />
+    <None Include="Resources\32x32_right-chevron.png" />
+    <None Include="Resources\32x32_right-arrow-in-a-circle.png" />
+    <None Include="Resources\32x32_rewind-button.png" />
+    <None Include="Resources\32x32_retweet-arrows-symbol.png" />
+    <None Include="Resources\32x32_resize-option.png" />
+    <None Include="Resources\32x32_reply-arrow.png" />
+    <None Include="Resources\32x32_reply.png" />
+    <None Include="Resources\32x32_reorder-option.png" />
+    <None Include="Resources\32x32_renren-social-network-of-china-logotype.png" />
+    <None Include="Resources\32x32_remove-symbol.png" />
+    <None Include="Resources\32x32_remove-button.png" />
+    <None Include="Resources\32x32_refresh-page-option.png" />
+    <None Include="Resources\32x32_refresh-arrow.png" />
+    <None Include="Resources\32x32_reduced-volume.png" />
+    <None Include="Resources\32x32_quote-left.png" />
+    <None Include="Resources\32x32_question-sign.png" />
+    <None Include="Resources\32x32_question-mark-on-a-circular-black-background.png" />
+    <None Include="Resources\32x32_qr-code.png" />
+    <None Include="Resources\32x32_puzzle-piece-silhouette.png" />
+    <None Include="Resources\32x32_printing-tool.png" />
+    <None Include="Resources\32x32_power-button-off.png" />
+    <None Include="Resources\32x32_plus-symbol-in-a-rounded-black-square.png" />
+    <None Include="Resources\32x32_plus-sign-in-a-black-circle.png" />
+    <None Include="Resources\32x32_plus-black-symbol.png" />
+    <None Include="Resources\32x32_play-video-button.png" />
+    <None Include="Resources\32x32_play-sign.png" />
+    <None Include="Resources\32x32_play-circle.png" />
+    <None Include="Resources\32x32_play-button.png" />
+    <None Include="Resources\32x32_plant-leaf-with-white-details.png" />
+    <None Include="Resources\32x32_plane.png" />
+    <None Include="Resources\32x32_pinterest-sign.png" />
+    <None Include="Resources\32x32_pinterest-logo.png" />
+    <None Include="Resources\32x32_picture.png" />
+    <None Include="Resources\32x32_photo-camera.png" />
+    <None Include="Resources\32x32_pencil.png" />
+    <None Include="Resources\32x32_pause-symbol.png" />
+    <None Include="Resources\32x32_paste-from-clipboard.png" />
+    <None Include="Resources\32x32_paper-push-pin.png" />
+    <None Include="Resources\32x32_paper-clip-outline.png" />
+    <None Include="Resources\32x32_paper-bill.png" />
+    <None Include="Resources\32x32_padlock-unlock.png" />
+    <None Include="Resources\32x32_padlock.png" />
+    <None Include="Resources\32x32_open-wrench-tool-silhouette.png" />
+    <None Include="Resources\32x32_open-padlock-silhouette.png" />
+    <None Include="Resources\32x32_open-laptop-computer.png" />
+    <None Include="Resources\32x32_open-folder-outline.png" />
+    <None Include="Resources\32x32_open-folder.png" />
+    <None Include="Resources\32x32_numbered-list.png" />
+    <None Include="Resources\32x32_nine-black-tiles.png" />
+    <None Include="Resources\32x32_music-note-black-symbol.png" />
+    <None Include="Resources\32x32_music-headphones.png" />
+    <None Include="Resources\32x32_musical-bell-outline.png" />
+    <None Include="Resources\32x32_move-option.png" />
+    <None Include="Resources\32x32_moon-phase-outline.png" />
+    <None Include="Resources\32x32_mobile-phone.png" />
+    <None Include="Resources\32x32_minus-symbol.png" />
+    <None Include="Resources\32x32_minus-sign-on-a-square-outline.png" />
+    <None Include="Resources\32x32_minus-sign-inside-a-black-rounded-square-shape.png" />
+    <None Include="Resources\32x32_minus-sign-inside-a-black-circle.png" />
+    <None Include="Resources\32x32_minus-button.png" />
+    <None Include="Resources\32x32_microphone-off.png" />
+    <None Include="Resources\32x32_microphone-black-shape.png" />
+    <None Include="Resources\32x32_meh-face-emoticon.png" />
+    <None Include="Resources\32x32_medical-kit.png" />
+    <None Include="Resources\32x32_maxcdn-website-logo.png" />
+    <None Include="Resources\32x32_map-marker.png" />
+    <None Include="Resources\32x32_man.png" />
+    <None Include="Resources\32x32_magnifying-glass.png" />
+    <None Include="Resources\32x32_magic-wand.png" />
+    <None Include="Resources\32x32_long-arrow-pointing-up.png" />
+    <None Include="Resources\32x32_long-arrow-pointing-to-the-right.png" />
+    <None Include="Resources\32x32_long-arrow-pointing-to-left.png" />
+    <None Include="Resources\32x32_list-with-dots.png" />
+    <None Include="Resources\32x32_list-on-window.png" />
+    <None Include="Resources\32x32_listing-option.png" />
+    <None Include="Resources\32x32_list.png" />
+    <None Include="Resources\32x32_linux-logo.png" />
+    <None Include="Resources\32x32_link-symbol.png" />
+    <None Include="Resources\32x32_linkedin-sign.png" />
+    <None Include="Resources\32x32_linkedin-letters.png" />
+    <None Include="Resources\32x32_lightning-bolt-shadow.png" />
+    <None Include="Resources\32x32_light-bulb.png" />
+    <None Include="Resources\32x32_level-up.png" />
+    <None Include="Resources\32x32_letter-p-symbol.png" />
+    <None Include="Resources\32x32_leter-a-inside-a-black-circle.png" />
+    <None Include="Resources\32x32_lemon.png" />
+    <None Include="Resources\32x32_legal-hammer.png" />
+    <None Include="Resources\32x32_left-indentation-option.png" />
+    <None Include="Resources\32x32_left-arrow-1.png" />
+    <None Include="Resources\32x32_left-arrow.png" />
+    <None Include="Resources\32x32_keyboard.png" />
+    <None Include="Resources\32x32_italicize-text.png" />
+    <None Include="Resources\32x32_instagram-symbol.png" />
+    <None Include="Resources\32x32_information-symbol.png" />
+    <None Include="Resources\32x32_information-button.png" />
+    <None Include="Resources\32x32_indent-right.png" />
+    <None Include="Resources\32x32_increase-size-option.png" />
+    <None Include="Resources\32x32_inbox.png" />
+    <None Include="Resources\32x32_html-5-logo.png" />
+    <None Include="Resources\32x32_hotel-letter-h-sign-inside-a-black-rounded-square.png" />
+    <None Include="Resources\32x32_hostpital-building.png" />
+    <None Include="Resources\32x32_horizontal-resize-option.png" />
+    <None Include="Resources\32x32_home.png" />
+    <None Include="Resources\32x32_heart-shape-silhouette.png" />
+    <None Include="Resources\32x32_heart-shape-outline.png" />
+    <None Include="Resources\32x32_hard-drive.png" />
+    <None Include="Resources\32x32_hand-pointing-upward.png" />
+    <None Include="Resources\32x32_hand-pointing-to-left-direction.png" />
+    <None Include="Resources\32x32_hand-finger-pointing-down.png" />
+    <None Include="Resources\32x32_half-star-shape.png" />
+    <None Include="Resources\32x32_group-profile-users.png" />
+    <None Include="Resources\32x32_great-britain-pound.png" />
+    <None Include="Resources\32x32_google-plus-symbol-1.png" />
+    <None Include="Resources\32x32_google-plus-symbol.png" />
+    <None Include="Resources\32x32_gittip-website-logo.png" />
+    <None Include="Resources\32x32_github-sign.png" />
+    <None Include="Resources\32x32_github-logo.png" />
+    <None Include="Resources\32x32_github-character.png" />
+    <None Include="Resources\32x32_gift-box.png" />
+    <None Include="Resources\32x32_gamepad-console.png" />
+    <None Include="Resources\32x32_fullscreen-symbol.png" />
+    <None Include="Resources\32x32_frown.png" />
+    <None Include="Resources\32x32_foursquare-button.png" />
+    <None Include="Resources\32x32_four-black-squares.png" />
+    <None Include="Resources\32x32_forward-button.png" />
+    <None Include="Resources\32x32_fork-and-knife-silhouette.png" />
+    <None Include="Resources\32x32_font-symbol-of-letter-a.png" />
+    <None Include="Resources\32x32_font-selection-editor.png" />
+    <None Include="Resources\32x32_folder-white-shape.png" />
+    <None Include="Resources\32x32_folder-closed-black-shape.png" />
+    <None Include="Resources\32x32_fluffy-cloud-silhouette.png" />
+    <None Include="Resources\32x32_flickr-website-logo-silhouette.png" />
+    <None Include="Resources\32x32_flag-black-shape.png" />
+    <None Include="Resources\32x32_fire-symbol.png" />
+    <None Include="Resources\32x32_fire-extinguisher.png" />
+    <None Include="Resources\32x32_finger-of-a-hand-pointing-to-right-direction.png" />
+    <None Include="Resources\32x32_filter-tool-black-shape.png" />
+    <None Include="Resources\32x32_film-strip-with-two-photograms.png" />
+    <None Include="Resources\32x32_file.png" />
+    <None Include="Resources\32x32_fighter-jet-silhouette.png" />
+    <None Include="Resources\32x32_female-silhouette.png" />
+    <None Include="Resources\32x32_fast-forward-arrows.png" />
+    <None Include="Resources\32x32_facetime-button.png" />
+    <None Include="Resources\32x32_facebook-logo-1.png" />
+    <None Include="Resources\32x32_facebook-logo.png" />
+    <None Include="Resources\32x32_eye-with-a-diagonal-line-interface-symbol-for-invisibility.png" />
+    <None Include="Resources\32x32_eye-open.png" />
+    <None Include="Resources\32x32_external-link-symbol.png" />
+    <None Include="Resources\32x32_external-link-square-with-an-arrow-in-right-diagonal.png" />
+    <None Include="Resources\32x32_exclamation-sign.png" />
+    <None Include="Resources\32x32_exclamation.png" />
+    <None Include="Resources\32x32_exchange-arrows.png" />
+    <None Include="Resources\32x32_euro-currency-symbol.png" />
+    <None Include="Resources\32x32_envelope-of-white-paper.png" />
+    <None Include="Resources\32x32_envelope.png" />
+    <None Include="Resources\32x32_eject-symbol.png" />
+    <None Include="Resources\32x32_edit-interface-sign.png" />
+    <None Include="Resources\32x32_earth-globe.png" />
+    <None Include="Resources\32x32_dropbox-logo.png" />
+    <None Include="Resources\32x32_dribbble-logo.png" />
+    <None Include="Resources\32x32_download-to-storage-drive.png" />
+    <None Include="Resources\32x32_download-symbol.png" />
+    <None Include="Resources\32x32_down-arrow.png" />
+    <None Include="Resources\32x32_double-strikethrough-option.png" />
+    <None Include="Resources\32x32_double-sided-eraser.png" />
+    <None Include="Resources\32x32_double-left-chevron.png" />
+    <None Include="Resources\32x32_double-angle-pointing-to-right.png" />
+    <None Include="Resources\32x32_dot-and-circle.png" />
+    <None Include="Resources\32x32_dollar-symbol.png" />
+    <None Include="Resources\32x32_desktop-monitor.png" />
+    <None Include="Resources\32x32_delivery-truck-silhouette.png" />
+    <None Include="Resources\32x32_dashboard.png" />
+    <None Include="Resources\32x32_cut.png" />
+    <None Include="Resources\32x32_cursor.png" />
+    <None Include="Resources\32x32_css-3-logo.png" />
+    <None Include="Resources\32x32_cross-mark-on-a-black-circle-background.png" />
+    <None Include="Resources\32x32_crop-symbol.png" />
+    <None Include="Resources\32x32_credit-card.png" />
+    <None Include="Resources\32x32_couple-of-arrows-changing-places.png" />
+    <None Include="Resources\32x32_correct-symbol.png" />
+    <None Include="Resources\32x32_copy-document.png" />
+    <None Include="Resources\32x32_computer-tablet.png" />
+    <None Include="Resources\32x32_compass-circular-variant.png" />
+    <None Include="Resources\32x32_comment-white-oval-bubble.png" />
+    <None Include="Resources\32x32_comments.png" />
+    <None Include="Resources\32x32_comment-black-oval-bubble-shape.png" />
+    <None Include="Resources\32x32_collapse-window-option.png" />
+    <None Include="Resources\32x32_cog-wheel-silhouette.png" />
+    <None Include="Resources\32x32_coffee-cup-on-a-plate-black-silhouettes.png" />
+    <None Include="Resources\32x32_code-fork-symbol.png" />
+    <None Include="Resources\32x32_code.png" />
+    <None Include="Resources\32x32_cocktail-glass.png" />
+    <None Include="Resources\32x32_cloud-storage-uploading-option.png" />
+    <None Include="Resources\32x32_cloud-storage-download.png" />
+    <None Include="Resources\32x32_circular-shape-silhouette.png" />
+    <None Include="Resources\32x32_circle-with-an-arrow-pointing-to-left.png" />
+    <None Include="Resources\32x32_circle-shape-outline.png" />
+    <None Include="Resources\32x32_chevron-up.png" />
+    <None Include="Resources\32x32_chevron-sign-to-right.png" />
+    <None Include="Resources\32x32_chevron-sign-left.png" />
+    <None Include="Resources\32x32_chevron-sign-down.png" />
+    <None Include="Resources\32x32_chevron-pointing-to-the-left.png" />
+    <None Include="Resources\32x32_chevron-arrow-up.png" />
+    <None Include="Resources\32x32_chevron-arrow-down.png" />
+    <None Include="Resources\32x32_check-sign-in-a-rounded-black-square.png" />
+    <None Include="Resources\32x32_check-mark.png" />
+    <None Include="Resources\32x32_checkered-raised-flag.png" />
+    <None Include="Resources\32x32_checked-symbol.png" />
+    <None Include="Resources\32x32_check-box-empty.png" />
+    <None Include="Resources\32x32_check.png" />
+    <None Include="Resources\32x32_certificate-shape.png" />
+    <None Include="Resources\32x32_center-text-alignment.png" />
+    <None Include="Resources\32x32_caret-down.png" />
+    <None Include="Resources\32x32_caret-arrow-up.png" />
+    <None Include="Resources\32x32_camera-retro.png" />
+    <None Include="Resources\32x32_calendar-with-spring-binder-and-date-blocks.png" />
+    <None Include="Resources\32x32_calendar-page-empty.png" />
+    <None Include="Resources\32x32_bullseye.png" />
+    <None Include="Resources\32x32_bull-horn-announcer.png" />
+    <None Include="Resources\32x32_building-front.png" />
+    <None Include="Resources\32x32_bug.png" />
+    <None Include="Resources\32x32_briefcase.png" />
+    <None Include="Resources\32x32_branch-with-leaves-black-shape.png" />
+    <None Include="Resources\32x32_bookmark-white.png" />
+    <None Include="Resources\32x32_bookmark-black-shape.png" />
+    <None Include="Resources\32x32_book.png" />
+    <None Include="Resources\32x32_bold-text-option.png" />
+    <None Include="Resources\32x32_blank-file.png" />
+    <None Include="Resources\32x32_bitcoin-logo.png" />
+    <None Include="Resources\32x32_bitbucket-sign.png" />
+    <None Include="Resources\32x32_bitbucket-logotype-camera-lens-in-perspective.png" />
+    <None Include="Resources\32x32_bell-musical-tool.png" />
+    <None Include="Resources\32x32_beer-jar-black-silhouette.png" />
+    <None Include="Resources\32x32_beaker.png" />
+    <None Include="Resources\32x32_bar-graph-on-a-rectangle.png" />
+    <None Include="Resources\32x32_barcode.png" />
+    <None Include="Resources\32x32_ban-circle-symbol.png" />
+    <None Include="Resources\32x32_asterisk.png" />
+    <None Include="Resources\32x32_arrow-up-on-a-black-circle-background.png" />
+    <None Include="Resources\32x32_arrow-up.png" />
+    <None Include="Resources\32x32_arrow-pointing-to-right.png" />
+    <None Include="Resources\32x32_arrow-pointing-to-left.png" />
+    <None Include="Resources\32x32_arrow-pointing-right-in-a-circle.png" />
+    <None Include="Resources\32x32_arrow-pointing-down.png" />
+    <None Include="Resources\32x32_arrowheads-pointing-to-the-left.png" />
+    <None Include="Resources\32x32_arrowhead-pointing-up-inside-a-square-box-outline.png" />
+    <None Include="Resources\32x32_arrowhead-pointing-to-the-right.png" />
+    <None Include="Resources\32x32_arrow-down-on-black-circular-background.png" />
+    <None Include="Resources\32x32_arrow-angle-pointing-down.png" />
+    <None Include="Resources\32x32_archive-black-box.png" />
+    <None Include="Resources\32x32_apple-logo.png" />
+    <None Include="Resources\32x32_angle-pointing-to-left.png" />
+    <None Include="Resources\32x32_angle-arrow-pointing-to-right.png" />
+    <None Include="Resources\32x32_angle-arrow-down.png" />
+    <None Include="Resources\32x32_android-character-symbol.png" />
+    <None Include="Resources\32x32_anchor-shape.png" />
+    <None Include="Resources\32x32_ambulance.png" />
+    <None Include="Resources\32x32_align-to-right.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Fody.6.3.0\build\Fody.targets" Condition="Exists('packages\Fody.6.3.0\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Fody.6.3.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.6.3.0\build\Fody.targets'))" />
+    <Error Condition="!Exists('packages\Costura.Fody.5.0.0-alpha0281\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Costura.Fody.5.0.0-alpha0281\build\Costura.Fody.props'))" />
+  </Target>
+</Project>
